@@ -46,4 +46,25 @@ C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qi8d3cad/colossalai/kerne
     D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2059: 语法错误:“)”
 
 参考https://stackoverflow.com/questions/27442885/syntax-error-with-stdnumeric-limitsmax
-打开ColossalAI\setup.py, 将'-DNOMINMAX'追加到extra_cuda_flags和extra_cxx_flags列表中.
+打开ColossalAI\setup.py, 将'-DNOMINMAX'追加到extra_cuda_flags和extra_cxx_flags列表中. 这个方法无效.
+
+打开pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h, 将std::numeric_limits<size_t>::max()改为(std::numeric_limits<size_t>::max)().
+
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/functional/loss.h(597): error C2589: “(”:“::”右边的非法标记
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/functional/loss.h(597): error C2062: 意外的类型“unknown-type”
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/functional/loss.h(597): error C2059: 语法错误:“)”
+
+打开torch\include\torch\csrc\api\include\torch/nn/functional/loss.h, 将dist_neg = torch::min(dist_neg, dist_swap)改为dist_neg = (torch::min)(dist_neg, dist_swap)
+
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(55): error C2589: “(”:“::”右边的非法标记
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(55): error C2062: 意外的类型“unknown-type”
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(56): error C2589: “(”:“::”右边的非法标记
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(56): error C2059: 语法错误:“)”
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(56): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): warning C4003: 类函数宏的调用“max”参数不足
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2589: “(”:“::”右边的非法标记
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2062: 意外的类型“unknown-type”
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2059: 语法错误:“)”
+  D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+
+打开torch\include\torch/csrc/utils/python_numbers.h, 将std::numeric_limits<int32_t>::max()改为(std::numeric_limits<int32_t>::max)(), 将std::numeric_limits<int32_t>::min()改为(std::numeric_limits<int32_t>::min)(), 将第二个std::numeric_limits<uint32_t>::max()改为(std::numeric_limits<uint32_t>::max)()
