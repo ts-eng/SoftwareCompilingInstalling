@@ -38,3 +38,12 @@ C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qi8d3cad/colossalai/kerne
   C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-9v8ymakc/colossalai/kernel/cuda_native/csrc/kernels/softmax_kernels.cu(193): error: identifier "EPSILON" is undefined in device code
 
 打开ColossalAI\colossalai\kernel\cuda_native\csrc\kernels\softmax_kernels.cu, 将const float EPSILON = 1e-8f改为__constant__ float EPSILON = 1e-8f
+
+## ERROR 5
+
+    D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2589: “(”:“::”右边的非法标记
+    D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2062: 意外的类型“unknown-type”
+    D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2059: 语法错误:“)”
+
+参考https://stackoverflow.com/questions/27442885/syntax-error-with-stdnumeric-limitsmax
+打开ColossalAI\setup.py, 将'-DNOMINMAX'追加到extra_cuda_flags和extra_cxx_flags列表中.
