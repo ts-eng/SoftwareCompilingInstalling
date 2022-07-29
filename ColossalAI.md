@@ -5,7 +5,7 @@
 
   D:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.28.29333/include\type_traits(1065): error: static assertion failed with "You've instantiated std::aligned_storage<Len, Align> with an extended alignment (in other words, Align > alignof(max_align_t)). Before VS 2017 15.8, the member "type" would non-conformingly have an alignment of only alignof(max_align_t). VS 2017 15.8 was fixed to handle this correctly, but the fix inherently changes layout and breaks binary compatibility (*only* for uses of aligned_storage with extended alignments). Please define either (1) _ENABLE_EXTENDED_ALIGNED_STORAGE to acknowledge that you understand this message and that you actually want a type with an extended alignment, or (2) _DISABLE_EXTENDED_ALIGNED_STORAGE to silence this message and get the old non-conforming behavior."
 
-打开ColossalAI\setup.py, 将cc_flag = []改为cc_flag = ['-D_ENABLE_EXTENDED_ALIGNED_STORAGE'].
+打开ColossalAI\setup.py, 将`cc_flag = []`改为`cc_flag = ['-D_ENABLE_EXTENDED_ALIGNED_STORAGE']`.
 
 ## ERROR 2
 
@@ -15,7 +15,7 @@
   C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qoj_tn76/colossalai/kernel/cuda_native/csrc/multi_tensor_scale_kernel.cu(68): error: identifier "isfinite< ::c10::Half> " is undefined in device code
 `
 
-打开ColossalAI\colossalai\kernel\cuda_native\csrc\multi_tensor_scale_kernel.cu, 将两处isfinite(r_in[ii])替换为isfinite(static_cast<float>(r_in[ii])).
+打开ColossalAI\colossalai\kernel\cuda_native\csrc\multi_tensor_scale_kernel.cu, 将两处`isfinite(r_in[ii])`替换为`isfinite(static_cast<float>(r_in[ii]))`.
 
 
 ## ERROR 3
