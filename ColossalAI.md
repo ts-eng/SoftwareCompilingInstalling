@@ -69,3 +69,12 @@ C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qi8d3cad/colossalai/kerne
   D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2143: 语法错误: 缺少“;”(在“{”的前面)
 
 打开torch\include\torch/csrc/utils/python_numbers.h, 将std::numeric_limits<int32_t>::max()改为(std::numeric_limits<int32_t>::max)(), 将std::numeric_limits<int32_t>::min()改为(std::numeric_limits<int32_t>::min)(), 将第二个std::numeric_limits<uint32_t>::max()改为(std::numeric_limits<uint32_t>::max)()
+  
+
+  D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch/csrc/jit/runtime/argument_spec.h(286): error C2589: “(”:“::”右边的非法标记
+  D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch/csrc/jit/runtime/argument_spec.h(286): error C2062: 意外的类型“unknown-type”
+  D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch/csrc/jit/runtime/argument_spec.h(286): error C2059: 语法错误:“)”
+  D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch/csrc/jit/runtime/argument_spec.h(286): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+  
+  
+打开torch\include\torch\csrc\jit\runtime\argument_spec.h, 将std::numeric_limits<uint16_t>::max()替换为(std::numeric_limits<uint16_t>::max)().
