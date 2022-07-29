@@ -19,6 +19,7 @@
 打开ColossalAI\colossalai\kernel\cuda_native\csrc\multi_tensor_scale_kernel.cu, 将两处`isfinite(r_in[ii])`替换为`isfinite(static_cast<float>(r_in[ii]))`.
 
 
+
 ## ERROR 3
 
 C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-rkgk6nkq/colossalai/kernel/cuda_native/csrc/kernels/normalize_kernels.cu(86): error: identifier "uint" is undefined
@@ -40,8 +41,12 @@ C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qi8d3cad/colossalai/kerne
 
 打开ColossalAI\colossalai\kernel\cuda_native\csrc\kernels\softmax_kernels.cu, 将const float EPSILON = 1e-8f改为__constant__ float EPSILON = 1e-8f
 
+  
+  
 ## ERROR 5
 
+  
+  
     D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2589: “(”:“::”右边的非法标记
     D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2062: 意外的类型“unknown-type”
     D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\ATen/core/op_registration/op_allowlist.h(41): error C2059: 语法错误:“)”
@@ -69,6 +74,19 @@ C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qi8d3cad/colossalai/kerne
   D:\ProgramData\Anaconda3\envs\pytorch\lib\site-packages\torch\include\torch/csrc/utils/python_numbers.h(80): error C2143: 语法错误: 缺少“;”(在“{”的前面)
 
 打开torch\include\torch/csrc/utils/python_numbers.h, 将std::numeric_limits<int32_t>::max()改为(std::numeric_limits<int32_t>::max)(), 将std::numeric_limits<int32_t>::min()改为(std::numeric_limits<int32_t>::min)(), 将第二个std::numeric_limits<uint32_t>::max()改为(std::numeric_limits<uint32_t>::max)()
+  
+  
+  
+## ERROR 6
+  
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(43): warning C4003: 类函数宏的调用“max”参数不足
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(43): error C2059: 语法错误:“(”
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(45): warning C4003: 类函数宏的调用“max”参数不足
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(45): error C2589: “(”:“::”右边的非法标记
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(45): error C2062: 意外的类型“unknown-type”
+    D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch\csrc\api\include\torch/nn/utils/clip_grad.h(45): error C2059: 语法错误:“)”
+
+打开torch\include\torch\csrc\api\include\torch\nn\utils\clip_grad.h, 将torch::max(torch::stack(norms))替换为(torch::max)(torch::stack(norms))
   
 
   D:\ProgramData\anaconda3\envs\ColossalAI\lib\site-packages\torch\include\torch/csrc/jit/runtime/argument_spec.h(286): error C2589: “(”:“::”右边的非法标记
