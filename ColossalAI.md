@@ -15,6 +15,7 @@
   C:/Users/ZHIWEI~1.ZEN/AppData/Local/Temp/pip-req-build-qoj_tn76/colossalai/kernel/cuda_native/csrc/multi_tensor_scale_kernel.cu(68): error: identifier "isfinite< ::c10::Half> " is undefined in device code
 `
 
+参考https://github.com/NVIDIA/apex/issues/846
 打开ColossalAI\colossalai\kernel\cuda_native\csrc\multi_tensor_scale_kernel.cu, 将两处`isfinite(r_in[ii])`替换为`isfinite(static_cast<float>(r_in[ii]))`.
 
 
