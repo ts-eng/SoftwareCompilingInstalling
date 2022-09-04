@@ -25,3 +25,18 @@ $ sudo vi /etc/hosts
 $ curl -O https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc  
 $ sudo apt-key add ros.asc  
 OK  
+
+## 更新源
+
+$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak  
+$ sudo touch /etc/apt/sources.list  
+$ sudo vim /etc/apt/sources.list  
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse  
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse  
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse  
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse  
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse  
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse  
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse  
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse  
+$ sudo apt-get update  
