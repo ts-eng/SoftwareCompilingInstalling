@@ -105,10 +105,10 @@ No module named 'wx'
 
 https://blog.51cto.com/wuhaoshu/429952   
 
-sudo apt-get install libgtk-3-dev
-export PKG_CONFIG=/usr/bin/pkg-config
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig
-pip3 install wxPython
+sudo apt-get install libgtk-3-dev  
+export PKG_CONFIG=/usr/bin/pkg-config  
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig  
+pip3 install wxPython  
 
 ## 缺少igraph
 
