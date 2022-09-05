@@ -94,3 +94,26 @@ ModuleNotFoundError: No module named 'rospkg'
 
 解决办法：  
 pip3 install rospkg  
+
+
+## 缺少wx
+
+rosrun kalibr kalibr_calibrate_cameras --help
+No module named 'wx'
+
+解决办法：  
+
+https://blog.51cto.com/wuhaoshu/429952   
+
+sudo apt-get install libgtk-3-dev
+export PKG_CONFIG=/usr/bin/pkg-config
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig
+pip3 install wxPython
+
+## 缺少igraph
+
+ModuleNotFoundError: No module named 'igraph'  
+
+解决办法：   
+pip3 install python-igraph  
+
