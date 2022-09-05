@@ -54,3 +54,43 @@ make: *** [Makefile:141: all] Error 2
 
 解决办法：  
 sudo apt-get install python-numpy  
+
+## 内存不足
+
+fatal error: Killed signal terminated program cc1plus  
+
+解决办法：  
+减少编译的线程数  
+catkin build -DCMAKE_BUILD_TYPE=Release -j3
+
+## 缺少yaml  
+
+(rk3588) tseng@tseng-VirtualBox:~/workspace/kalibr_workspace$ rosrun kalibr kalibr_bagcreater --help   
+ModuleNotFoundError: No module named 'yaml'  
+
+解决办法：  
+pip3 install PyYAML  
+
+## 缺少Cryptodome
+
+(rk3588) tseng@tseng-VirtualBox:~/workspace/kalibr_workspace$ rosrun kalibr kalibr_bagcreater --help 
+ModuleNotFoundError: No module named 'Cryptodome'  
+
+解决办法：  
+pip3 install pycryptodomex  
+
+## 缺少gnupg
+
+(rk3588) tseng@tseng-VirtualBox:~/workspace/kalibr_workspace$ rosrun kalibr kalibr_bagcreater --help 
+ModuleNotFoundError: No module named 'gnupg'
+
+解决办法：  
+pip3 install gnupg  
+
+## 缺少rospkg
+
+(rk3588) tseng@tseng-VirtualBox:~/workspace/kalibr_workspace$ rosrun kalibr kalibr_bagcreater --help 
+ModuleNotFoundError: No module named 'rospkg'
+
+解决办法：  
+pip3 install rospkg  
