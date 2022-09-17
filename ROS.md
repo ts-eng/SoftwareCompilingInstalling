@@ -30,7 +30,13 @@ OK
 
 $ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak  
 $ sudo touch /etc/apt/sources.list  
-$ sudo vim /etc/apt/sources.list  
+$ sudo vim /etc/apt/sources.list
+
+
+
+
+
+
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse  
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse  
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse  
@@ -39,6 +45,12 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse  
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse  
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse  
+
+
+
+
+
+
 $ sudo apt-get update  
 
 ## rosdep update出错
