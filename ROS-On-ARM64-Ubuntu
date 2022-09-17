@@ -1,4 +1,4 @@
-选择ROS Noetic Ninjemys，这个是ubuntu20.04用的
+在ROS/Installation页面选择ROS Noetic Ninjemys，这个是ubuntu20.04用的
 
 更换清华源, 在https://mirrors.tuna.tsinghua.edu.cn/找到ubuntu-ports点进去, ubuntu选择20.04LTS
 $ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
