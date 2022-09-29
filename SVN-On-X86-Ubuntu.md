@@ -32,25 +32,25 @@ $ svnserve -d -r ~/svn
 $ ps -aux|grep svnserve  
 $ killall svnserve  
 
-$ sudo touch /etc/systemd/system/svn.service
-$ sudo chmod 664 /etc/systemd/system/svn.service
-$ sudo vim /etc/systemd/system/svn.service
+$ sudo touch /etc/systemd/system/svn.service  
+$ sudo chmod 664 /etc/systemd/system/svn.service  
+$ sudo vim /etc/systemd/system/svn.service  
 
-[Unit]
-Description=Subversion Server
-[Service]
-Type=forking
-ExecStart=/usr/bin/svnserve -d -r /home/zkw/svn
-ExecStop=/usr/bin/killall svnserve
-Restart=always
-[Install]
-WantedBy=default.target
+[Unit]  
+Description=Subversion Server  
+[Service]  
+Type=forking  
+ExecStart=/usr/bin/svnserve -d -r /home/zkw/svn  
+ExecStop=/usr/bin/killall svnserve  
+Restart=always  
+[Install]  
+WantedBy=default.target  
 
-$ systemctl daemon-reload
+$ systemctl daemon-reload  
 
-$ systemctl start svn.service
-$ systemctl stop svn.service
+$ systemctl start svn.service  
+$ systemctl stop svn.service  
 
-$ systemctl enable svn.service
+$ systemctl enable svn.service  
 
-[Ref:](https://zhuanlan.zhihu.com/p/377181219)
+[Ref:](https://zhuanlan.zhihu.com/p/377181219)  
