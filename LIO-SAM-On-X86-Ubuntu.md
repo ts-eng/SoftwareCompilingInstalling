@@ -44,3 +44,19 @@ index cc3c60f..64c8b9f 100644
  
  #include <pcl/point_cloud.h>  
  #include <pcl/point_types.h>  
+
+3 运行  
+开一个终端  
+$ cd /path/to/catkin  
+$ source devel/setup.bash  
+$ roslaunch lio_sam run.launch  
+开第二个终端  
+$ cd /path/to/catkin  
+$ source devel/setup.bash
+$ rosbag play /mnt/host/downloads/lio_sam/walking_dataset.bag -r 3
+
+4 保存地图  
+$ cd /path/to/catkin   
+$ source devel/setup.bash  
+$ rosservice call /lio_sam/save_map 0.2 /Downloads/  
+这里的路径是用户路径下的路径, 不存在不会有结果输出  
