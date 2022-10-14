@@ -60,3 +60,7 @@ $ cd /path/to/catkin
 $ source devel/setup.bash  
 $ rosservice call /lio_sam/save_map 0.2 /Downloads/  
 这里的路径是用户路径下的路径, 不存在不会有结果输出  
+
+5 查看地图  
+$ sudo apt-get install  pcl-tools  
+$ pcl_viewer Downloads/GlobalMap.pcd  
