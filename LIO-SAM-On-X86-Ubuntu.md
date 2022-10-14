@@ -52,8 +52,8 @@ $ source devel/setup.bash
 $ roslaunch lio_sam run.launch  
 开第二个终端  
 $ cd /path/to/catkin  
-$ source devel/setup.bash
-$ rosbag play /mnt/host/downloads/lio_sam/walking_dataset.bag -r 3
+$ source devel/setup.bash  
+$ rosbag play /mnt/host/downloads/lio_sam/walking_dataset.bag -r 3  
 
 4 保存地图  
 $ cd /path/to/catkin   
