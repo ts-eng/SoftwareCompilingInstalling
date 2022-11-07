@@ -1,6 +1,7 @@
 ```bash
 conda create -n smartrobot python=3.8  
 conda activate smartrobot  
+conda remove -n smartrobot --all
 ```
 
 ```bash
