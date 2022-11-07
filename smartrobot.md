@@ -26,3 +26,7 @@ libsm6 libgl1-mesa-glx libprotobuf-dev gcc
 ```bash
 pip install -r modeldeployer/requirements.txt --find-links modeldeployer/deps/ --no-index 
 ```
+
+```bash
+pip install -r requirements.txt --find-links deps/ --no-index 
+```
