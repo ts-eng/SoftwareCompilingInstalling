@@ -22,3 +22,7 @@ pip install -r modelbuilder/requirements.txt --find-links modelbuilder/deps/ --n
 sudo apt-get install libxslt1-dev zlib1g zlib1g-dev libglib2.0-0 \
 libsm6 libgl1-mesa-glx libprotobuf-dev gcc  
 ```
+
+```bash
+pip install -r modeldeployer/requirements.txt --find-links modeldeployer/deps/ --no-index 
+```
