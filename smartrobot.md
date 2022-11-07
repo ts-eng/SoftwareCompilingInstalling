@@ -28,5 +28,7 @@ pip install -r modeldeployer/requirements.txt --find-links modeldeployer/deps/ -
 ```
 
 ```bash
+pip install numpy==1.19.5 --find-links deps/ --no-index 
 pip install -r requirements.txt --find-links deps/ --no-index 
 ```
+
