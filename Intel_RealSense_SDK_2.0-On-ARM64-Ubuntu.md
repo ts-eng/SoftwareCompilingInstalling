@@ -14,7 +14,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 mkdir build && cd build
 cmake -DBUILD_EXAMPLES=true \
 -DCMAKE_BUILD_TYPE=release \
--DFORCE_LIBUVC=true \
+-DFORCE_RSUSB_BACKEND=true \
 -DCMAKE_INSTALL_PREFIX=$(pwd)/../install \
 ../librealsense-2.52.1
 make -j4
