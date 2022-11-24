@@ -4,6 +4,10 @@ sudo apt-get update
 sudo apt-get install aptitude
 sudo aptitude install libssl-dev
 sudo apt-get install git cmake libssl-dev freeglut3-dev libusb-1.0-0-dev pkg-config libgtk-3-dev unzip -y
+mkdir ~/Downloads/librealsense
+把librealsense-2.52.1.tar.gz放到此目录下
+cd ~/Downloads/librealsense
+tar xvf librealsense-2.52.1.tar.gz
 cd librealsense-2.52.1
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 cd ..
