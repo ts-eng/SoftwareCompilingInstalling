@@ -1,4 +1,4 @@
-参考[NVIDIA Jetson installation](https://dev.intelrealsense.com/docs/nvidia-jetson-tx2-installation)和[libuvc_installation.sh](https://github.com/IntelRealSense/librealsense/blob/master/scripts/libuvc_installation.sh)
+参考[rk3588上安装librealsense](https://github.com/IntelRealSense/librealsense/issues/11030),[NVIDIA Jetson installation](https://dev.intelrealsense.com/docs/nvidia-jetson-tx2-installation)和[libuvc_installation.sh](https://github.com/IntelRealSense/librealsense/blob/master/scripts/libuvc_installation.sh)
 ```
 sudo apt-get update
 sudo apt-get install aptitude
@@ -17,3 +17,5 @@ cmake -DBUILD_EXAMPLES=true \
 make -j4
 sudo make install
 ```
+[
+](https://github.com/IntelRealSense/librealsense/issues/11030)
