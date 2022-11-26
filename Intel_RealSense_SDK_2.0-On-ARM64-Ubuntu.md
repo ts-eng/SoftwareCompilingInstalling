@@ -15,8 +15,10 @@ mkdir build && cd build
 cmake -DBUILD_EXAMPLES=true \
 -DCMAKE_BUILD_TYPE=release \
 -DFORCE_RSUSB_BACKEND=true \
+-DBUILD_SHARED_LIBS=OFF \
 -DCMAKE_INSTALL_PREFIX=$(pwd)/../install \
 ../librealsense-2.52.1
 make -j4
 sudo make install
 ```
+编译出来的库非常大, 用[strip](https://github.com/IntelRealSense/librealsense/issues/3211)命令去除调式等信息, 可大大缩小库的大小.  
