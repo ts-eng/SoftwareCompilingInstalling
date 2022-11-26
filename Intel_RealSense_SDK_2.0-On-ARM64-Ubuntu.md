@@ -21,4 +21,12 @@ cmake -DBUILD_EXAMPLES=true \
 make -j4
 sudo make install
 ```
-编译出来的bin目录下的文件非常大, 用[strip](https://github.com/IntelRealSense/librealsense/issues/3211)命令去除调式等信息. [不要对库文件strip!](https://github.com/emscripten-core/emscripten/issues/9705)
+编译出来的bin目录下的文件非常大, 用[strip](https://github.com/IntelRealSense/librealsense/issues/3211)命令去除调式等信息. [不要对库文件strip!](https://github.com/emscripten-core/emscripten/issues/9705)  
+
+如何集成到CMake工程中?  
+```
+set(realsense2_DIR ${CMAKE_CURRENT_LIST_DIR}/3rdparty/librealsense/lib/cmake/realsense2)
+find_package(realsense2 REQUIRED)
+include_directories(${realsense2_INCLUDE_DIR})
+target_link_libraries(${PROJECT_NAME} ${realsense2_LIBRARY} pthread)
+```
