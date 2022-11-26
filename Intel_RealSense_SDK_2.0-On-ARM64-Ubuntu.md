@@ -21,4 +21,4 @@ cmake -DBUILD_EXAMPLES=true \
 make -j4
 sudo make install
 ```
-编译出来的库非常大, 用[strip](https://github.com/IntelRealSense/librealsense/issues/3211)命令去除调式等信息, 可大大缩小库的大小.  
+编译出来的bin目录下的文件非常大, 用[strip](https://github.com/IntelRealSense/librealsense/issues/3211)命令去除调式等信息. [不要对库文件strip!](https://github.com/emscripten-core/emscripten/issues/9705)
