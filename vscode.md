@@ -15,15 +15,16 @@
 * 更改“program”和“args”. ${workspaceFolder}是工程目录(.vscode所在目录).  
 
 # vscode gdb无代码调式
-* 将Debug版本的应用程序(包括launch.json文件，将其放在可执行程序所在的目录)部署到服务器上.
+* 将Debug版本的应用程序部署到服务器上.
 * 更改“program”和“args”. ${workspaceFolder}是工程目录(.vscode所在目录).  
-* 如果程序里有用到相对路径，该相对路径是相对运行路径的，而运行路径为.vscode目录里面的路径. 比如对于   
+* 如果程序里有用到相对路径，相对路径对应的运行路径为.vscode目录. 比如对于   
 ```
-bin/some_program
-bin/.vscode/
+deploy/bin/some_program
+deploy/lib/some_library
+deploy/.vscode/launch.json
 ```
-运行路径是bin/.vscode/，万分注意.   
+运行路径是deploy/.vscode/，万分注意.   
 * 如果需要设置环境变量，可在environment里设置，比如   
 ```
-"environment": [{"name": "LD_LIBRARY_PATH", "value": "$LD_LIBRARY_PATH:${workspaceFolder}/../lib"}],
+"environment": [{"name": "LD_LIBRARY_PATH", "value": "$LD_LIBRARY_PATH:${workspaceFolder}/lib"}],
 ```
