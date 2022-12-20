@@ -12,3 +12,20 @@ git submodule add xxx.git
 ```
 git clone xxx.git --recursive
 ```
+
+## 轻量级版本管理工具Gogs
+将本地项目初始化为一个本地仓库
+```
+cd xxx
+git init
+git add .
+git commit -m "first commit"
+```
+在[Gogs页面](http://localhost:3000/install)新建一个仓库，把仓库地址(xxx.git)复制下来，然后关联本地仓库到git仓库
+```
+git remote add origin xxx.git
+```
+把本地文件推送到远程仓库里  
+```
+git push -u origin master
+```
