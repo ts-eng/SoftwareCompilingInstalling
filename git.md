@@ -14,6 +14,11 @@ git clone xxx.git --recursive
 ```
 
 ## 轻量级版本管理工具Gogs
+启动Gogs服务器
+```
+cd /path/to/gogs
+gogs web
+```
 将本地项目初始化为一个本地仓库
 ```
 cd xxx
